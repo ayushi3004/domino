@@ -4,18 +4,12 @@ import (
 	"fmt"
 	"github.com/hashicorp/terraform/terraform"
 	"os"
-	// "strings"
+	"strings"
 )
-
-type resourceMap struct {
-	Resources map[string]map[string]int
-}
-
-type output map[string]interface{}
 
 func main() {
 
-	var terraformPlanFile string = "/home/indix/Downloads/terraform.tfplan"
+	var terraformPlanFile string = "/home/indix/Downloads/ts2.out"
 
 	processTerraformPlan(terraformPlanFile)
 
@@ -32,48 +26,29 @@ func processTerraformPlan(planFile string){
 		panic(err)
 	}
 
-	fmt.Println(plan.BackEndState)
-	// diff := output{} for _, v := range plan.State.Modules {
-	// convertModuleDiff(diff, v) }
+	for moduleIdx := range plan.Diff.Modules {
+		for resource, instanceDiff := range plan.Diff.Modules[moduleIdx].Resources {
+			resourceType := strings.Split(resource, ".")[0]
+			var size string
+			switch resourceType {
+				case "aws_instance":
+					size = instanceDiff.Attributes["aws_instance_type"].New
 
-}
+				case "azure":
+					size = instanceDiff.Attributes["vm_size"].New
 
-func convertModuleDiff(out output, m map[string]interface{}) {
-	// insert(out, diff.Path, "destroy", diff.Destroy)
+				case "digitalocean_droplet":
+					fmt.Println(resourceType)
+					size = instanceDiff.Attributes["size"].New
+				
+				case "google_compute_instance":
+					size = instanceDiff.Attributes["machine_type"].New	
 
-	// for k, v := range m.Resources {
-	// 	// convertInstanceDiff(out, append(diff.Path, k), v)
-	// 	fmt.Println(k)
-	// 	fmt.Printf("%+v\n", v)
-	// }
-	// for resource, v := range state.Resources {
-	// 	// convertInstanceDiff(out, append(diff.Path, k), v)
-	// 	fmt.Println(k)
-	// 	fmt.Println(v)
-	// }
-}
+				default:
+					fmt.Println("resource type not recognized: ", resourceType)
+			}
+			fmt.Println(size)
+		}
 
-// func insert(out output, path []string, key string, value interface{}) {
-// 	if len(path) > 0 && path[0] == "root" {
-// 		path = path[1:]
-// 	}
-// 	for _, elem := range path {
-// 		switch nested := out[elem].(type) {
-// 		case output:
-// 			out = nested
-// 		default:
-// 			new := output{}
-// 			out[elem] = new
-// 			out = new
-// 		}
-// 	}
-// 	out[key] = value
-// }
-
-func convertInstanceDiff(out output, path []string, diff *terraform.InstanceDiff) {
-	for k, v := range diff.Attributes {
-		// insert(out, path, k, v.New)
-		fmt.Println(k)
-		fmt.Println(v)
 	}
 }
