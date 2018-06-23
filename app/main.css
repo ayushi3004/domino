@@ -21,11 +21,12 @@ body {
     background: #fff;
     color: #888;
     border: 1px solid #eeeeee;
-    border-bottom: 4px solid #ddd;
+    border-bottom: 4px solid #9b59b6;
     border-radius: 5px;
-    width: 95%;
+    width: 90%;
     height: 30px;
     font-size: 25px;
+    margin: 20px;
     padding-right:20px;
     padding-left:20px;
     padding-top:10px;
@@ -94,7 +95,7 @@ body {
 }
 
 input::placeholder {
-    font-family: FontAwesome;
+    font-family: FontAwesome, "Source Sans Pro", sans-serif;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
