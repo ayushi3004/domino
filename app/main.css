@@ -11,6 +11,7 @@ body {
     margin: auto;
 }
 
+
 #search {
     max-width: 960px;
     margin: auto;
@@ -90,4 +91,11 @@ body {
 .overflow-hidden {
     width: 30px;
     overflow: hidden;
+}
+
+input::placeholder {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
 }
