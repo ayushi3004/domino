@@ -1,212 +1,212 @@
 [
   {
     "ephemeral_disks": "25 GB", 
-    "memory_in_gb": "1", 
+    "memory_in_gb": 1, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.007", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.007, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "1"
+    "vcpus": 1
   }, 
   {
     "ephemeral_disks": "50 GB", 
-    "memory_in_gb": "2", 
+    "memory_in_gb": 2, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.015", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.015, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "1"
+    "vcpus": 1
   }, 
   {
     "ephemeral_disks": "60 GB", 
-    "memory_in_gb": "3", 
+    "memory_in_gb": 3, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.022", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.022, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "1"
+    "vcpus": 1
   }, 
   {
     "ephemeral_disks": "60 GB", 
-    "memory_in_gb": "2", 
+    "memory_in_gb": 2, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.022", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.022, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "2"
+    "vcpus": 2
   }, 
   {
     "ephemeral_disks": "60 GB", 
-    "memory_in_gb": "1", 
+    "memory_in_gb": 1, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.022", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.022, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "3"
+    "vcpus": 3
   }, 
   {
     "ephemeral_disks": "80 GB", 
-    "memory_in_gb": "4", 
+    "memory_in_gb": 4, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.030", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.03, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "2"
+    "vcpus": 2
   }, 
   {
     "ephemeral_disks": "160 GB", 
-    "memory_in_gb": "8", 
+    "memory_in_gb": 8, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.060", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.06, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "4"
+    "vcpus": 4
   }, 
   {
     "ephemeral_disks": "320 GB", 
-    "memory_in_gb": "16", 
+    "memory_in_gb": 16, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.119", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.119, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "6"
+    "vcpus": 6
   }, 
   {
     "ephemeral_disks": "640 GB", 
-    "memory_in_gb": "32", 
+    "memory_in_gb": 32, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.238", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.238, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "8"
+    "vcpus": 8
   }, 
   {
     "ephemeral_disks": "960 GB", 
-    "memory_in_gb": "48", 
+    "memory_in_gb": 48, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.357", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.357, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "12"
+    "vcpus": 12
   }, 
   {
     "ephemeral_disks": "1,280 GB", 
-    "memory_in_gb": "64", 
+    "memory_in_gb": 64, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.476", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.476, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "16"
+    "vcpus": 16
   }, 
   {
     "ephemeral_disks": "1,920 GB", 
-    "memory_in_gb": "96", 
+    "memory_in_gb": 96, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.714", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.714, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "20"
+    "vcpus": 20
   }, 
   {
     "ephemeral_disks": "2,560 GB", 
-    "memory_in_gb": "128", 
+    "memory_in_gb": 128, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.952", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.952, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "24"
+    "vcpus": 24
   }, 
   {
     "ephemeral_disks": "3,840 GB", 
-    "memory_in_gb": "192", 
+    "memory_in_gb": 192, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "1.429", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 1.429, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "32"
+    "vcpus": 32
   }, 
   {
     "ephemeral_disks": "20 GB", 
-    "memory_in_gb": "2", 
+    "memory_in_gb": 2, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.030", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.03, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "1"
+    "vcpus": 1
   }, 
   {
     "ephemeral_disks": "25 GB", 
-    "memory_in_gb": "4", 
+    "memory_in_gb": 4, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.060", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.06, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "2"
+    "vcpus": 2
   }, 
   {
     "ephemeral_disks": "50 GB", 
-    "memory_in_gb": "8", 
+    "memory_in_gb": 8, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.119", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.119, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "4"
+    "vcpus": 4
   }, 
   {
     "ephemeral_disks": "100 GB", 
-    "memory_in_gb": "16", 
+    "memory_in_gb": 16, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.238", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.238, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "8"
+    "vcpus": 8
   }, 
   {
     "ephemeral_disks": "200 GB", 
-    "memory_in_gb": "32", 
+    "memory_in_gb": 32, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.476", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.476, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "16"
+    "vcpus": 16
   }, 
   {
     "ephemeral_disks": "400 GB", 
-    "memory_in_gb": "64", 
+    "memory_in_gb": 64, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "0.952", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 0.952, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "32"
+    "vcpus": 32
   }, 
   {
     "ephemeral_disks": "575 GB", 
-    "memory_in_gb": "86", 
+    "memory_in_gb": 86, 
     "name": "", 
-    "parsed_timestamp": 1529756437, 
-    "price_per_hour": "1.369", 
+    "parsed_timestamp": 1529757834, 
+    "price_per_hour": 1.369, 
     "provider": "digital_ocean", 
     "region": "nv", 
-    "vcpus": "46"
+    "vcpus": 46
   }
 ]

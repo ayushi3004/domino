@@ -35,10 +35,10 @@ class DOPriceParser:
 			doDominoData = {}
 			doDominoData["provider"] = "digital_ocean"
 			doDominoData["name"] = ""
-			doDominoData["memory_in_gb"] = eachInstance[0].split(" ")[0]
-			doDominoData["vcpus"] = eachInstance[1].split(" ")[0]
+			doDominoData["memory_in_gb"] = int(eachInstance[0].split(" ")[0])
+			doDominoData["vcpus"] = int(eachInstance[1].split(" ")[0])
 			doDominoData["ephemeral_disks"] = eachInstance[2]
-			doDominoData["price_per_hour"] = filter(None, eachInstance[4].split(" "))[1][:-3][1:]
+			doDominoData["price_per_hour"] = float(filter(None, eachInstance[4].split(" "))[1][:-3][1:])
 			doDominoData["region"] = "nv"
 			doDominoData["parsed_timestamp"] = current_timestamp
 
