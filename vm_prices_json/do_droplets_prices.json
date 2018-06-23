@@ -1,14 +1,14 @@
 [
   {
-    "ephemeral_disks": "25 GB", 
-    "memory_in_gb": 1, 
-    "name": "1gb", 
-    "parsed_timestamp": 1529767307, 
-    "price_per_hour": 0.007, 
-    "provider": "digital_ocean", 
-    "region": "us", 
+    "ephemeral_disks": "25 GB",
+    "memory_in_gb": 1,
+    "name": "1gb",
+    "parsed_timestamp": 1529767307,
+    "price_per_hour": 0.007,
+    "provider": "digital_ocean",
+    "region": "us",
     "vcpus": 1
-  }, 
+  },
   {
     "ephemeral_disks": "50 GB", 
     "memory_in_gb": 2, 
