@@ -12,7 +12,7 @@ import (
 
 type Plans []struct {
     EphemeralDisks  string `json:"ephemeral_disks"`
-    MemoryInGb      int64 `json:"memory_in_gb"`
+    MemoryInGb      float64 `json:"memory_in_gb"`
     Name            string `json:"name"`
     ParsedTimestamp int64  `json:"parsed_timestamp"`
     PricePerHour    float64 `json:"price_per_hour"`
