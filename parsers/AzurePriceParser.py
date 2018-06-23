@@ -27,10 +27,9 @@ class AzurePriceParser:
 			azureDominoData = {}
 			azureDominoData["provider"] = "azure"
 			azureDominoData["name"] = item["name"]
-			azureDominoData["vcpu"] = item["numberOfCores"]
+			azureDominoData["vcpus"] = item["numberOfCores"]
 			azureDominoData["memory_in_gb"] = item["memoryInMB"]/1024
-			azureDominoData["num_ephemeral_disks"] = item["maxDataDiskCount"]
-			azureDominoData["each_disk_size_in_gb"] = item["osDiskSizeInMB"]/1024
+			azureDominoData["ephemeral_disks"] = str(item["maxDataDiskCount"]) + " * " + str(item["osDiskSizeInMB"]/1024) + " GB"
 			azureDominoData["price_per_hour"] = item["linuxPrice"]
 			azureDominoData["region"] = region
 			azureDominoData["parsed_timestamp"] = current_timestamp
