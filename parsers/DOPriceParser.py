@@ -34,7 +34,7 @@ class DOPriceParser:
 		for eachInstance in doValuesList:
 			doDominoData = {}
 			doDominoData["provider"] = "digital_ocean"
-			doDominoData["name"] = eachInstance[0]
+			doDominoData["name"] = eachInstance[0].replace(" ", "").lower()
 			doDominoData["memory_in_gb"] = int(eachInstance[0].split(" ")[0])
 			doDominoData["vcpus"] = int(eachInstance[1].split(" ")[0])
 			doDominoData["ephemeral_disks"] = eachInstance[2]
