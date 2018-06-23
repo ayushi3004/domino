@@ -1,0 +1,212 @@
+[
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 3.75, 
+    "name": "n1-standard-1", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.0535, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 7.5, 
+    "name": "n1-standard-2", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.107, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 15.0, 
+    "name": "n1-standard-4", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.214, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 30.0, 
+    "name": "n1-standard-8", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.428, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 60.0, 
+    "name": "n1-standard-16", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.856, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 120.0, 
+    "name": "n1-standard-32", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 1.712, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 240.0, 
+    "name": "n1-standard-64", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 3.424, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 0.6, 
+    "name": "f1-micro", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.0086, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 1.7, 
+    "name": "g1-small", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.0289, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 13.0, 
+    "name": "n1-highmem-2", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.1348, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 26.0, 
+    "name": "n1-highmem-4", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.2696, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 52.0, 
+    "name": "n1-highmem-8", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.5393, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 104.0, 
+    "name": "n1-highmem-16", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 1.0786, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 208.0, 
+    "name": "n1-highmem-32", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 2.1571, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 416.0, 
+    "name": "n1-highmem-64", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 4.3142, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 1.8, 
+    "name": "n1-highcpu-2", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.0813, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 3.6, 
+    "name": "n1-highcpu-4", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.1626, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 7.2, 
+    "name": "n1-highcpu-8", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.3253, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 14.4, 
+    "name": "n1-highcpu-16", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 0.6506, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 28.8, 
+    "name": "n1-highcpu-32", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 1.3011, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "", 
+    "memory_in_gb": 57.6, 
+    "name": "n1-highcpu-64", 
+    "parsed_timestamp": 1529761764, 
+    "price_per_hour": 2.6022, 
+    "provider": "gce", 
+    "region": "us", 
+    "vcpus": 64
+  }
+]
