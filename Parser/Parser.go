@@ -8,8 +8,13 @@ import (
 )
 
 func main() {
+	argsWithProg := os.Args
 
-	var terraformPlanFile string = "/home/indix/Downloads/ts2.out"
+	if(len(argsWithProg[1:]) == 0) {
+		fmt.Println("Usage: domino [path-to-terraform-plan-file]\nThe above command will take in your terraform plan and display the total cost according to current CSP pricing.")
+	}
+	
+	var terraformPlanFile string = argsWithProg[0]
 
 	processTerraformPlan(terraformPlanFile)
 
@@ -34,7 +39,7 @@ func processTerraformPlan(planFile string){
 				case "aws_instance":
 					size = instanceDiff.Attributes["aws_instance_type"].New
 
-				case "azure":
+				case "azurerm_virtual_machine":
 					size = instanceDiff.Attributes["vm_size"].New
 
 				case "digitalocean_droplet":
@@ -49,6 +54,5 @@ func processTerraformPlan(planFile string){
 			}
 			fmt.Println(size)
 		}
-
 	}
 }
