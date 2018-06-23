@@ -1,0 +1,17 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-row > div {
+    width: 100px;
+    display: inline-block;
+    margin: 2px;
+    padding: 10px;
+}
+
