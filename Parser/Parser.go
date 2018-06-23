@@ -21,6 +21,8 @@ type Plans []struct {
     Vcpus           int64 `json:"vcpus"`
 }
 
+var priceMap map[string]float64
+
 func main() {
 	
 	if(len(os.Args[1:]) == 0) {
@@ -33,14 +35,22 @@ func main() {
 	res, _ := http.Get("http://localhost:8000/azure_vm_prices.json")
 	temp, _ := ioutil.ReadAll(res.Body)
 
-	// x := string(temp)
 	var plans Plans
 	err := json.Unmarshal(temp, &plans)
 	if err != nil {
 		fmt.Println("There was an error:", err)
 	}
-	
+	priceMap = planToPriceMap(plans)
+
 	processTerraformPlan(terraformPlanFile)
+}
+
+func planToPriceMap(plans Plans) (map[string]float64) {
+	priceMap := make(map[string]float64)
+	for _, plan:= range plans {
+		priceMap[strings.ToLower(plan.Name)] = plan.PricePerHour
+	}
+	return priceMap
 }
 
 func processTerraformPlan(planFile string){
@@ -55,36 +65,33 @@ func processTerraformPlan(planFile string){
 	}
 
 	for moduleIdx := range plan.Diff.Modules {
-		var size string
-		var count int
-		var instanceCountMap map[string]int
+		var instanceType string
+		var sum float64
 		
 		for resource, instanceDiff := range plan.Diff.Modules[moduleIdx].Resources {
 			resourceType := strings.Split(resource, ".")[0]
 			switch resourceType {
 				case "aws_instance":
-					size = instanceDiff.Attributes["aws_instance_type"].New
+					instanceType = instanceDiff.Attributes["aws_instance_type"].New
 
 				case "azurerm_virtual_machine":
-					size = instanceDiff.Attributes["vm_size"].New
+					instanceType = instanceDiff.Attributes["vm_size"].New
 
 				case "digitalocean_droplet":
-					size = instanceDiff.Attributes["size"].New
+					instanceType = instanceDiff.Attributes["size"].New
 				
 				case "google_compute_instance":
-					size = instanceDiff.Attributes["machine_type"].New	
+					instanceType = instanceDiff.Attributes["machine_type"].New	
 
 				default:
 					fmt.Println("resource type not recognized: ", resourceType)
 			}
-			count = instanceCountMap[size]
-			instanceCountMap[size] = count+1
+			sum = sum + calculateCost(instanceType)
 		}
-		fmt.Println("map:", instanceCountMap)
+		fmt.Println(sum)
 	}
 }
 
-func calculateCost(instanceCountMap string) {
-
-	
+func calculateCost(instanceType string) (float64){
+	return priceMap[strings.ToLower(instanceType)]
 }
