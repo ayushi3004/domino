@@ -11,12 +11,15 @@
     <script src="plans.js"></script>
 </head>
 <body>
+    <div id="nav">
+            🔸       
+        
+    </div>
+    <div id="search">
+            <input id="searchbox" type="text" v-model="search" placeholder="🔸 Search">
+    </div>
+
     <div id="app">
-        <div id="nav">
-                🔸       
-            <input id="searchbox" type="text" v-model="search"/> 
-            <!-- <input id="searchbutton" type="submit"> -->
-        </div>
         <div>
             <div class="table-row table-row-head">
                 <div>Provider</div>
