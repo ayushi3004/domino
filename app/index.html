@@ -30,7 +30,7 @@
             <div class="table-row" v-for="plan in getPlans()">
                 <div>{{plan.provider}}</div>
                 <div class=".overflow-hidden">{{plan.name}}</div>
-                <div>{{plan.vcpu}}</div>
+                <div>{{plan.vcpus}}</div>
                 <div>{{plan.memory_in_gb}}</div>
                 <div>{{plan.disk_in_gb}}</div>
                 <div>{{plan.price_per_hour}}</div>
@@ -61,7 +61,9 @@
             })
         },
         filterByCpu: function(value, plans) {
-            return plans.vcpu == value;
+            return plans.filter(function(plan){
+                return plan.vcpus == value;
+            })
         },
         filterByMemory: function(value, plans) {
             return plans.filter(function(plan){

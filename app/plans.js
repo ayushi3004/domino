@@ -1,1369 +1,1522 @@
-var plans = [{
-	"name": "Standard_B1ms",
-	"disk_in_gb": 2095104,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 2,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.0207
-}, {
-	"name": "Standard_B1s",
-	"disk_in_gb": 2095104,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 1,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.0108
-}, {
-	"name": "Standard_B2ms",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.084
-}, {
-	"name": "Standard_B2s",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 4,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.042
-}, {
-	"name": "Standard_B4ms",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.167
-}, {
-	"name": "Standard_B8ms",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.335
-}, {
-	"name": "Standard_DS1_v2",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.073
-}, {
-	"name": "Standard_DS2_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.146
-}, {
-	"name": "Standard_DS3_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.293
-}, {
-	"name": "Standard_DS4_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.585
-}, {
-	"name": "Standard_DS5_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.17
-}, {
-	"name": "Standard_DS11_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.185
-}, {
-	"name": "Standard_DS12_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.371
-}, {
-	"name": "Standard_DS13_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.741
-}, {
-	"name": "Standard_DS14_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.482
-}, {
-	"name": "Standard_DS15_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 20,
-	"region": "eastus",
-	"memory_in_gb": 140,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.853
-}, {
-	"name": "Standard_DS2_v2_Promo",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.1
-}, {
-	"name": "Standard_DS3_v2_Promo",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.2
-}, {
-	"name": "Standard_DS4_v2_Promo",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.4
-}, {
-	"name": "Standard_DS5_v2_Promo",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.8
-}, {
-	"name": "Standard_DS11_v2_Promo",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.133
-}, {
-	"name": "Standard_DS12_v2_Promo",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.266
-}, {
-	"name": "Standard_DS13_v2_Promo",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.532
-}, {
-	"name": "Standard_DS14_v2_Promo",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.064
-}, {
-	"name": "Standard_F1s",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 2,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.05
-}, {
-	"name": "Standard_F2s",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 4,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.099
-}, {
-	"name": "Standard_F4s",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.199
-}, {
-	"name": "Standard_F8s",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.398
-}, {
-	"name": "Standard_F16s",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.796
-}, {
-	"name": "Standard_D2s_v3",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.096
-}, {
-	"name": "Standard_D4s_v3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.192
-}, {
-	"name": "Standard_D8s_v3",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.384
-}, {
-	"name": "Standard_D16s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.768
-}, {
-	"name": "Standard_D32s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 32,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.536
-}, {
-	"name": "Standard_A0",
-	"disk_in_gb": 1047552,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 0,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.02
-}, {
-	"name": "Standard_A1",
-	"disk_in_gb": 2095104,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 1,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.06
-}, {
-	"name": "Standard_A2",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.12
-}, {
-	"name": "Standard_A3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.24
-}, {
-	"name": "Standard_A5",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.25
-}, {
-	"name": "Standard_A4",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.48
-}, {
-	"name": "Standard_A6",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.5
-}, {
-	"name": "Standard_A7",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.0
-}, {
-	"name": "Basic_A0",
-	"disk_in_gb": 1047552,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 0,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.018
-}, {
-	"name": "Basic_A1",
-	"disk_in_gb": 2095104,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 1,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.023
-}, {
-	"name": "Basic_A2",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.079
-}, {
-	"name": "Basic_A3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.176
-}, {
-	"name": "Basic_A4",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.352
-}, {
-	"name": "Standard_D1_v2",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.073
-}, {
-	"name": "Standard_D2_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.146
-}, {
-	"name": "Standard_D3_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.293
-}, {
-	"name": "Standard_D4_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.585
-}, {
-	"name": "Standard_D5_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.17
-}, {
-	"name": "Standard_D11_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.185
-}, {
-	"name": "Standard_D12_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.371
-}, {
-	"name": "Standard_D13_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.741
-}, {
-	"name": "Standard_D14_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.482
-}, {
-	"name": "Standard_D15_v2",
-	"disk_in_gb": 67043328,
-	"vcpu": 20,
-	"region": "eastus",
-	"memory_in_gb": 140,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.853
-}, {
-	"name": "Standard_D2_v2_Promo",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.1
-}, {
-	"name": "Standard_D3_v2_Promo",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.2
-}, {
-	"name": "Standard_D4_v2_Promo",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.4
-}, {
-	"name": "Standard_D5_v2_Promo",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.8
-}, {
-	"name": "Standard_D11_v2_Promo",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.133
-}, {
-	"name": "Standard_D12_v2_Promo",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.266
-}, {
-	"name": "Standard_D13_v2_Promo",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.532
-}, {
-	"name": "Standard_D14_v2_Promo",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.064
-}, {
-	"name": "Standard_F1",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 2,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.05
-}, {
-	"name": "Standard_F2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 4,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.099
-}, {
-	"name": "Standard_F4",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.199
-}, {
-	"name": "Standard_F8",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.398
-}, {
-	"name": "Standard_F16",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.796
-}, {
-	"name": "Standard_A1_v2",
-	"disk_in_gb": 2095104,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 2,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.043
-}, {
-	"name": "Standard_A2m_v2",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.119
-}, {
-	"name": "Standard_A2_v2",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 4,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.091
-}, {
-	"name": "Standard_A4m_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.238
-}, {
-	"name": "Standard_A4_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.191
-}, {
-	"name": "Standard_A8m_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.475
-}, {
-	"name": "Standard_A8_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.4
-}, {
-	"name": "Standard_D2_v3",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.096
-}, {
-	"name": "Standard_D4_v3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.192
-}, {
-	"name": "Standard_D8_v3",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.384
-}, {
-	"name": "Standard_D16_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.768
-}, {
-	"name": "Standard_D32_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 32,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.536
-}, {
-	"name": "Standard_H8",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.904
-}, {
-	"name": "Standard_H16",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.807
-}, {
-	"name": "Standard_H8m",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.211
-}, {
-	"name": "Standard_H16m",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.422
-}, {
-	"name": "Standard_H16r",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.988
-}, {
-	"name": "Standard_H16mr",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.664
-}, {
-	"name": "Standard_D1",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.077
-}, {
-	"name": "Standard_D2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.154
-}, {
-	"name": "Standard_D3",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.308
-}, {
-	"name": "Standard_D4",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.616
-}, {
-	"name": "Standard_D11",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.193
-}, {
-	"name": "Standard_D12",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.386
-}, {
-	"name": "Standard_D13",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.771
-}, {
-	"name": "Standard_D14",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.542
-}, {
-	"name": "Standard_NV6",
-	"disk_in_gb": 25141248,
-	"vcpu": 6,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.14
-}, {
-	"name": "Standard_NV12",
-	"disk_in_gb": 50282496,
-	"vcpu": 12,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.28
-}, {
-	"name": "Standard_NV24",
-	"disk_in_gb": 67043328,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.56
-}, {
-	"name": "Standard_NC6s_v2",
-	"disk_in_gb": 12570624,
-	"vcpu": 6,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.07
-}, {
-	"name": "Standard_NC12s_v2",
-	"disk_in_gb": 25141248,
-	"vcpu": 12,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.14
-}, {
-	"name": "Standard_NC24rs_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 9.108
-}, {
-	"name": "Standard_NC24s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 8.28
-}, {
-	"name": "Standard_NC6",
-	"disk_in_gb": 25141248,
-	"vcpu": 6,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.9
-}, {
-	"name": "Standard_NC12",
-	"disk_in_gb": 50282496,
-	"vcpu": 12,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.8
-}, {
-	"name": "Standard_NC24",
-	"disk_in_gb": 67043328,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.6
-}, {
-	"name": "Standard_NC24r",
-	"disk_in_gb": 67043328,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.96
-}, {
-	"name": "Standard_F2s_v2",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 4,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.085
-}, {
-	"name": "Standard_F4s_v2",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 8,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.169
-}, {
-	"name": "Standard_F8s_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.338
-}, {
-	"name": "Standard_F16s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.677
-}, {
-	"name": "Standard_F32s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 32,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.353
-}, {
-	"name": "Standard_F64s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.706
-}, {
-	"name": "Standard_F72s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 72,
-	"region": "eastus",
-	"memory_in_gb": 144,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.045
-}, {
-	"name": "Standard_D64_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 256,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.072
-}, {
-	"name": "Standard_D64s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 256,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.072
-}, {
-	"name": "Standard_E2_v3",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.133
-}, {
-	"name": "Standard_E4_v3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.266
-}, {
-	"name": "Standard_E8_v3",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.532
-}, {
-	"name": "Standard_E16_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.064
-}, {
-	"name": "Standard_E32_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 32,
-	"region": "eastus",
-	"memory_in_gb": 256,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.128
-}, {
-	"name": "Standard_E64i_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 432,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.011
-}, {
-	"name": "Standard_E64_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 432,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.011
-}, {
-	"name": "Standard_E2s_v3",
-	"disk_in_gb": 4190208,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 16,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.133
-}, {
-	"name": "Standard_E4s_v3",
-	"disk_in_gb": 8380416,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 32,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.266
-}, {
-	"name": "Standard_E8s_v3",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.532
-}, {
-	"name": "Standard_E16s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.064
-}, {
-	"name": "Standard_E32s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 32,
-	"region": "eastus",
-	"memory_in_gb": 256,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.128
-}, {
-	"name": "Standard_E64is_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 432,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.011
-}, {
-	"name": "Standard_E64s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 64,
-	"region": "eastus",
-	"memory_in_gb": 432,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.011
-}, {
-	"name": "Standard_DS1",
-	"disk_in_gb": 4190208,
-	"vcpu": 1,
-	"region": "eastus",
-	"memory_in_gb": 3,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.077
-}, {
-	"name": "Standard_DS2",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 7,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.154
-}, {
-	"name": "Standard_DS3",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.308
-}, {
-	"name": "Standard_DS4",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.616
-}, {
-	"name": "Standard_DS11",
-	"disk_in_gb": 8380416,
-	"vcpu": 2,
-	"region": "eastus",
-	"memory_in_gb": 14,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.193
-}, {
-	"name": "Standard_DS12",
-	"disk_in_gb": 16760832,
-	"vcpu": 4,
-	"region": "eastus",
-	"memory_in_gb": 28,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.386
-}, {
-	"name": "Standard_DS13",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.771
-}, {
-	"name": "Standard_DS14",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.542
-}, {
-	"name": "Standard_NC6s_v3",
-	"disk_in_gb": 12570624,
-	"vcpu": 6,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 3.06
-}, {
-	"name": "Standard_NC12s_v3",
-	"disk_in_gb": 25141248,
-	"vcpu": 12,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 6.12
-}, {
-	"name": "Standard_NC24rs_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 13.464
-}, {
-	"name": "Standard_NC24s_v3",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 12.24
-}, {
-	"name": "Standard_L8s_v2",
-	"disk_in_gb": 16760832,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 64,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.312
-}, {
-	"name": "Standard_L16s_v2",
-	"disk_in_gb": 33521664,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 128,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.624
-}, {
-	"name": "Standard_ND6s",
-	"disk_in_gb": 12570624,
-	"vcpu": 6,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 2.07
-}, {
-	"name": "Standard_ND12s",
-	"disk_in_gb": 25141248,
-	"vcpu": 12,
-	"region": "eastus",
-	"memory_in_gb": 224,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 4.14
-}, {
-	"name": "Standard_ND24rs",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 9.108
-}, {
-	"name": "Standard_ND24s",
-	"disk_in_gb": 33521664,
-	"vcpu": 24,
-	"region": "eastus",
-	"memory_in_gb": 448,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 8.28
-}, {
-	"name": "Standard_A8",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.975
-}, {
-	"name": "Standard_A9",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.95
-}, {
-	"name": "Standard_A10",
-	"disk_in_gb": 33521664,
-	"vcpu": 8,
-	"region": "eastus",
-	"memory_in_gb": 56,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 0.78
-}, {
-	"name": "Standard_A11",
-	"disk_in_gb": 67043328,
-	"vcpu": 16,
-	"region": "eastus",
-	"memory_in_gb": 112,
-	"parsed_timestamp": 1529734949,
-	"provider": "azure",
-	"price_per_hour": 1.56
-}]
+var plans = [
+	{
+	  "ephemeral_disks": "2 * 1023 GB", 
+	  "memory_in_gb": 2, 
+	  "name": "Standard_B1ms", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.0207, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "2 * 1023 GB", 
+	  "memory_in_gb": 1, 
+	  "name": "Standard_B1s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.0108, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_B2ms", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.084, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 4, 
+	  "name": "Standard_B2s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.042, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_B4ms", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.167, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_B8ms", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.335, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Standard_DS1_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.073, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_DS2_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.146, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS3_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.293, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS4_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.585, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_DS5_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.17, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS11_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.185, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS12_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.371, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_DS13_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.741, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_DS14_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.482, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 140, 
+	  "name": "Standard_DS15_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.853, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 20
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_DS2_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.1, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS3_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.2, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS4_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.4, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_DS5_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.8, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS11_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.133, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS12_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.266, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_DS13_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.532, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_DS14_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.064, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 2, 
+	  "name": "Standard_F1s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.05, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 4, 
+	  "name": "Standard_F2s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.099, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_F4s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.199, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_F8s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.398, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_F16s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.796, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_D2s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.096, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_D4s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.192, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_D8s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.384, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_D16s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.768, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_D32s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.536, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 32
+	}, 
+	{
+	  "ephemeral_disks": "1 * 1023 GB", 
+	  "memory_in_gb": 0, 
+	  "name": "Standard_A0", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.02, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "2 * 1023 GB", 
+	  "memory_in_gb": 1, 
+	  "name": "Standard_A1", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.06, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Standard_A2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.12, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_A3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.24, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_A5", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.25, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_A4", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.48, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_A6", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.5, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_A7", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.0, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "1 * 1023 GB", 
+	  "memory_in_gb": 0, 
+	  "name": "Basic_A0", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.018, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "2 * 1023 GB", 
+	  "memory_in_gb": 1, 
+	  "name": "Basic_A1", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.023, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Basic_A2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.079, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Basic_A3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.176, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Basic_A4", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.352, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Standard_D1_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.073, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_D2_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.146, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D3_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.293, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D4_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.585, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_D5_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.17, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D11_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.185, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D12_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.371, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_D13_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.741, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_D14_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.482, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 140, 
+	  "name": "Standard_D15_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.853, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 20
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_D2_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.1, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D3_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.2, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D4_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.4, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_D5_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.8, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D11_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.133, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D12_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.266, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_D13_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.532, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_D14_v2_Promo", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.064, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 2, 
+	  "name": "Standard_F1", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.05, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 4, 
+	  "name": "Standard_F2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.099, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_F4", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.199, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_F8", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.398, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_F16", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.796, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "2 * 1023 GB", 
+	  "memory_in_gb": 2, 
+	  "name": "Standard_A1_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.043, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_A2m_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.119, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 4, 
+	  "name": "Standard_A2_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.091, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_A4m_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.238, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_A4_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.191, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_A8m_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.475, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_A8_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.4, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_D2_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.096, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_D4_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.192, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_D8_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.384, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_D16_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.768, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_D32_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.536, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 32
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_H8", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.904, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_H16", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.807, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_H8m", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.211, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_H16m", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.422, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_H16r", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.988, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_H16mr", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.664, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Standard_D1", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.077, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_D2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.154, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.308, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D4", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.616, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_D11", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.193, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_D12", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.386, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_D13", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.771, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_D14", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.542, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "24 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_NV6", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.14, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 6
+	}, 
+	{
+	  "ephemeral_disks": "48 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_NV12", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.28, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 12
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_NV24", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.56, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "12 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_NC6s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.07, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 6
+	}, 
+	{
+	  "ephemeral_disks": "24 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_NC12s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.14, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 12
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_NC24rs_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 9.108, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_NC24s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 8.28, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "24 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_NC6", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.9, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 6
+	}, 
+	{
+	  "ephemeral_disks": "48 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_NC12", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.8, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 12
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_NC24", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.6, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_NC24r", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.96, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 4, 
+	  "name": "Standard_F2s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.085, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 8, 
+	  "name": "Standard_F4s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.169, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_F8s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.338, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_F16s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.677, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_F32s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.353, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 32
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_F64s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.706, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 144, 
+	  "name": "Standard_F72s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.045, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 72
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 256, 
+	  "name": "Standard_D64_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.072, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 256, 
+	  "name": "Standard_D64s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.072, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_E2_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.133, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_E4_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.266, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_E8_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.532, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_E16_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.064, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 256, 
+	  "name": "Standard_E32_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.128, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 32
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 432, 
+	  "name": "Standard_E64i_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.011, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 432, 
+	  "name": "Standard_E64_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.011, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 16, 
+	  "name": "Standard_E2s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.133, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 32, 
+	  "name": "Standard_E4s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.266, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_E8s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.532, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_E16s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.064, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 256, 
+	  "name": "Standard_E32s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.128, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 32
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 432, 
+	  "name": "Standard_E64is_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.011, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 432, 
+	  "name": "Standard_E64s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.011, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 64
+	}, 
+	{
+	  "ephemeral_disks": "4 * 1023 GB", 
+	  "memory_in_gb": 3, 
+	  "name": "Standard_DS1", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.077, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 1
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 7, 
+	  "name": "Standard_DS2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.154, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.308, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS4", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.616, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "8 * 1023 GB", 
+	  "memory_in_gb": 14, 
+	  "name": "Standard_DS11", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.193, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 2
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 28, 
+	  "name": "Standard_DS12", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.386, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 4
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_DS13", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.771, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_DS14", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.542, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "12 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_NC6s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 3.06, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 6
+	}, 
+	{
+	  "ephemeral_disks": "24 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_NC12s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 6.12, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 12
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_NC24rs_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 13.464, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_NC24s_v3", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 12.24, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "16 * 1023 GB", 
+	  "memory_in_gb": 64, 
+	  "name": "Standard_L8s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.312, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 128, 
+	  "name": "Standard_L16s_v2", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.624, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "12 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_ND6s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 2.07, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 6
+	}, 
+	{
+	  "ephemeral_disks": "24 * 1023 GB", 
+	  "memory_in_gb": 224, 
+	  "name": "Standard_ND12s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 4.14, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 12
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_ND24rs", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 9.108, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 448, 
+	  "name": "Standard_ND24s", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 8.28, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 24
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_A8", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.975, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_A9", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.95, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}, 
+	{
+	  "ephemeral_disks": "32 * 1023 GB", 
+	  "memory_in_gb": 56, 
+	  "name": "Standard_A10", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 0.78, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 8
+	}, 
+	{
+	  "ephemeral_disks": "64 * 1023 GB", 
+	  "memory_in_gb": 112, 
+	  "name": "Standard_A11", 
+	  "parsed_timestamp": 1529753201, 
+	  "price_per_hour": 1.56, 
+	  "provider": "azure", 
+	  "region": "eastus", 
+	  "vcpus": 16
+	}
+  ]
