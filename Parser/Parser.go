@@ -88,7 +88,7 @@ func processTerraformPlan(planFile string){
 			}
 			sum = sum + calculateCost(instanceType)
 		}
-		fmt.Println(sum)
+		fmt.Println(sum * 720)
 	}
 }
 
