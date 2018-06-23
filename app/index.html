@@ -11,34 +11,30 @@
     <script src="plans.js"></script>
 </head>
 <body>
+    <div id="nav">
+            🔸       
+        <!-- <input id="searchbox" type="text">
+        <input id="searchbutton" type="submit"> -->
+    </div>
     <div id="app">
-        <input type="text">
-        <input type="submit">
-        <table>
-            <thead>
-                <tr>
-                    <td>Provider</td>
-                    <td>Name</td>
-                    <td>CPU</td>
-                    <td>Memory</td>
-                    <td>Disk</td>
-                    <td>Pricing</td>
-                    <td>Region</td>
-                </tr>
-            </thead>
-            <tbody>
+                <div class="table-row table-row-head">
+                    <div>Provider</div>
+                    <div>Name</div>
+                    <div>CPU</div>
+                    <div>Memory</div>
+                    <div>Disk</div>
+                    <div>Pricing</div>
+                    <div>Region</div>
+                </div>
                 <div class="table-row" v-for="plan in plans">
                     <div>{{plan.provider}}</div>
-                    <div>{{plan.name}}</div>
+                    <div class=".overflow-hidden">{{plan.name}}</div>
                     <div>{{plan.vcpu}}</div>
                     <div>{{plan.memory_in_gb}}</div>
                     <div>{{plan.disk_in_gb}}</div>
                     <div>{{plan.price_per_hour}}</div>
                     <div>{{plan.region}}</div>
                 </div>
-                
-            </tbody>
-        </table>
     </div>
     
 </body>
