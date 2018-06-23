@@ -10,19 +10,15 @@ import (
 	"net/http"
 )
 
-type Plan struct {
-	EphemeralDisks  string  `json:"ephemeral_disks"`
-	MemoryInGb      int     `json:"memory_in_gb"`
-	Name            string  `json:"name"`
-	ParsedTimestamp int     `json:"parsed_timestamp"`
-	PricePerHour    float64 `json:"price_per_hour"`
-	Provider        string  `json:"provider"`
-	Region          string  `json:"region"`
-	Vcpus           int     `json:"vcpus"`
-}
-
-type APIResponse struct { 
-	plans []Plan
+type Plans []struct {
+    EphemeralDisks  string `json:"ephemeral_disks"`
+    MemoryInGb      int64 `json:"memory_in_gb"`
+    Name            string `json:"name"`
+    ParsedTimestamp int64  `json:"parsed_timestamp"`
+    PricePerHour    float64 `json:"price_per_hour"`
+    Provider        string `json:"provider"`
+    Region          string `json:"region"`
+    Vcpus           int64 `json:"vcpus"`
 }
 
 func main() {
@@ -38,16 +34,13 @@ func main() {
 	temp, _ := ioutil.ReadAll(res.Body)
 
 	// x := string(temp)
-	var ar APIResponse
-	err := json.Unmarshal(temp, &ar)
+	var plans Plans
+	err := json.Unmarshal(temp, &plans)
 	if err != nil {
 		fmt.Println("There was an error:", err)
 	}
-	fmt.Printf("%+v", ar)
-	// fmt.Println(ar.plans[0].Region)
-
-	_ = terraformPlanFile
-	// processTerraformPlan(terraformPlanFile)
+	
+	processTerraformPlan(terraformPlanFile)
 }
 
 func processTerraformPlan(planFile string){
