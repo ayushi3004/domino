@@ -5,24 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Domino</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="plans.js"></script>
 </head>
 <body>
     <div id="app">
-        {{tabl}}
+        <input type="text">
+        <input type="submit">
+        <table>
+            <thead>
+                <tr>
+                    <td>Provider</td>
+                    <td>Name</td>
+                    <td>CPU</td>
+                    <td>Memory</td>
+                    <td>Disk</td>
+                    <td>Pricing</td>
+                    <td>Region</td>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="table-row" v-for="plan in plans">
+                    <div>{{plan.provider}}</div>
+                    <div>{{plan.name}}</div>
+                    <div>{{plan.vcpu}}</div>
+                    <div>{{plan.memory_in_gb}}</div>
+                    <div>{{plan.disk_in_gb}}</div>
+                    <div>{{plan.price_per_hour}}</div>
+                    <div>{{plan.region}}</div>
+                </div>
+                
+            </tbody>
+        </table>
     </div>
     
 </body>
 <script>
-
+    
     var app = new Vue({
         el: "#app", 
         data: {
-            tabl: "table table table"
+            plans: plans
         }
     })
-
+    
 </script>
 </html>
