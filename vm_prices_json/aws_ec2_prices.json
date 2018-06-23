@@ -1,0 +1,1152 @@
+[
+  {
+    "ephemeral_disks": "160 GiB HDD + 900MB swap", 
+    "memory_in_gb": 1.7, 
+    "name": "m1.small", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.044, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "410 GiB HDD", 
+    "memory_in_gb": 3.75, 
+    "name": "m1.medium", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.087, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "840 GiB (2 * 420 GiB HDD)", 
+    "memory_in_gb": 7.5, 
+    "name": "m1.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.175, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "1680 GiB (4 * 420 GiB HDD)", 
+    "memory_in_gb": 15.0, 
+    "name": "m1.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.35, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "350 GiB HDD + 900MB swap", 
+    "memory_in_gb": 1.7, 
+    "name": "c1.medium", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.13, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "1680 GiB (4 * 420 GiB HDD)", 
+    "memory_in_gb": 7.0, 
+    "name": "c1.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.52, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "3360 GiB (4 * 840 GiB HDD)", 
+    "memory_in_gb": 60.5, 
+    "name": "cc2.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.0, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "420 GiB HDD", 
+    "memory_in_gb": 17.1, 
+    "name": "m2.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.245, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "850 GiB HDD", 
+    "memory_in_gb": 34.2, 
+    "name": "m2.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.49, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "1680 GiB (2 * 840 GiB HDD)", 
+    "memory_in_gb": 68.4, 
+    "name": "m2.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.98, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "48000 GiB (24 * 2000 GiB HDD)", 
+    "memory_in_gb": 117.0, 
+    "name": "hs1.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.6, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 0.613, 
+    "name": "t1.micro", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.02, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 0.5, 
+    "name": "t2.nano", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.0058, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 1.0, 
+    "name": "t2.micro", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.0116, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 2.0, 
+    "name": "t2.small", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.023, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 4.0, 
+    "name": "t2.medium", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.0464, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 8.0, 
+    "name": "t2.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.0928, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 16.0, 
+    "name": "t2.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.1856, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 32.0, 
+    "name": "t2.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.3712, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 8.0, 
+    "name": "m5.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.096, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 16.0, 
+    "name": "m5.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.192, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 32.0, 
+    "name": "m5.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.384, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 64.0, 
+    "name": "m5.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.768, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 192.0, 
+    "name": "m5.12xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.304, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 48
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 384.0, 
+    "name": "m5.24xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.608, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 96
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 8.0, 
+    "name": "m4.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.1, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 16.0, 
+    "name": "m4.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.2, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 32.0, 
+    "name": "m4.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.4, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 64.0, 
+    "name": "m4.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.8, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 160.0, 
+    "name": "m4.10xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.0, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 40
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 256.0, 
+    "name": "m4.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.2, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 4.0, 
+    "name": "c5.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.085, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 8.0, 
+    "name": "c5.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.17, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 16.0, 
+    "name": "c5.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.34, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 32.0, 
+    "name": "c5.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.68, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 72.0, 
+    "name": "c5.9xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.53, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 36
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 144.0, 
+    "name": "c5.18xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.06, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 72
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 3.75, 
+    "name": "c4.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.1, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 7.5, 
+    "name": "c4.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.199, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 15.0, 
+    "name": "c4.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.398, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 30.0, 
+    "name": "c4.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.796, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 60.0, 
+    "name": "c4.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.591, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 36
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 15.25, 
+    "name": "r4.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.133, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 30.5, 
+    "name": "r4.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.266, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 61.0, 
+    "name": "r4.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.532, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 122.0, 
+    "name": "r4.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.064, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 244.0, 
+    "name": "r4.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.128, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 488.0, 
+    "name": "r4.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.256, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 61.0, 
+    "name": "p3.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.06, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 244.0, 
+    "name": "p3.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 12.24, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 488.0, 
+    "name": "p3.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 24.48, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 61.0, 
+    "name": "p2.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.9, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 488.0, 
+    "name": "p2.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 7.2, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 732.0, 
+    "name": "p2.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 14.4, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 122.0, 
+    "name": "g3.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.14, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 244.0, 
+    "name": "g3.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.28, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "EBS only", 
+    "memory_in_gb": 488.0, 
+    "name": "g3.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.56, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "2000 GiB HDD", 
+    "memory_in_gb": 32.0, 
+    "name": "h1.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.468, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "4000 GiB (2 * 2000 GiB HDD)", 
+    "memory_in_gb": 64.0, 
+    "name": "h1.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.936, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "8000 GiB (4 * 2000 GiB HDD)", 
+    "memory_in_gb": 128.0, 
+    "name": "h1.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.872, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "16000 GiB (8 * 2000 GiB HDD)", 
+    "memory_in_gb": 256.0, 
+    "name": "h1.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.744, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "6000 GiB (3 * 2000 GiB HDD)", 
+    "memory_in_gb": 30.5, 
+    "name": "d2.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.69, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "12000 GiB (6 * 2000 GiB HDD)", 
+    "memory_in_gb": 61.0, 
+    "name": "d2.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.38, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "24000 GiB (12 * 2000 GiB HDD)", 
+    "memory_in_gb": 122.0, 
+    "name": "d2.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.76, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "48000 GiB (24 * 2000 GiB HDD)", 
+    "memory_in_gb": 244.0, 
+    "name": "d2.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 5.52, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 36
+  }, 
+  {
+    "ephemeral_disks": "4 GiB SSD", 
+    "memory_in_gb": 3.75, 
+    "name": "m3.medium", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.067, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 1
+  }, 
+  {
+    "ephemeral_disks": "32 GiB SSD", 
+    "memory_in_gb": 7.5, 
+    "name": "m3.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.133, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "80 GiB (2 * 40 GiB SSD)", 
+    "memory_in_gb": 15.0, 
+    "name": "m3.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.266, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "160 GiB (2 * 80 GiB SSD)", 
+    "memory_in_gb": 30.0, 
+    "name": "m3.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.532, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "32 GiB (2 * 16 GiB SSD)", 
+    "memory_in_gb": 3.75, 
+    "name": "c3.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.105, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "80 GiB (2 * 40 GiB SSD)", 
+    "memory_in_gb": 7.5, 
+    "name": "c3.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.21, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "160 GiB (2 * 80 GiB SSD)", 
+    "memory_in_gb": 15.0, 
+    "name": "c3.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.42, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "320 GiB (2 * 160 GiB SSD)", 
+    "memory_in_gb": 30.0, 
+    "name": "c3.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.84, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "640 GiB (2 * 320 GiB SSD)", 
+    "memory_in_gb": 60.0, 
+    "name": "c3.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.68, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "60 GiB SSD", 
+    "memory_in_gb": 15.0, 
+    "name": "g2.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.65, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "240 GiB (2 * 120 GiB SSD)", 
+    "memory_in_gb": 60.0, 
+    "name": "g2.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.6, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "240 GiB (2 * 120 GiB SSD)", 
+    "memory_in_gb": 244.0, 
+    "name": "cr1.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.5, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "1920 GiB SSD", 
+    "memory_in_gb": 976.0, 
+    "name": "x1.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 6.669, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "3840 GiB (2 * 1920 GiB SSD)", 
+    "memory_in_gb": 1952.0, 
+    "name": "x1.32xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 13.338, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 128
+  }, 
+  {
+    "ephemeral_disks": "120 GiB SSD", 
+    "memory_in_gb": 122.0, 
+    "name": "x1e.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.834, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "240 GiB SSD", 
+    "memory_in_gb": 244.0, 
+    "name": "x1e.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.668, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "480 GiB SSD", 
+    "memory_in_gb": 488.0, 
+    "name": "x1e.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.336, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "960 GiB SSD", 
+    "memory_in_gb": 976.0, 
+    "name": "x1e.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 6.672, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "1920 GiB SSD", 
+    "memory_in_gb": 1952.0, 
+    "name": "x1e.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 13.344, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "3840 GiB (2 * 1920 GiB SSD)", 
+    "memory_in_gb": 3904.0, 
+    "name": "x1e.32xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 26.688, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 128
+  }, 
+  {
+    "ephemeral_disks": "32 GiB SSD", 
+    "memory_in_gb": 15.25, 
+    "name": "r3.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.166, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "80 GiB SSD", 
+    "memory_in_gb": 30.5, 
+    "name": "r3.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.333, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "160 GiB SSD", 
+    "memory_in_gb": 61.0, 
+    "name": "r3.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.665, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "320 GiB SSD", 
+    "memory_in_gb": 122.0, 
+    "name": "r3.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.33, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "640 GiB (2 * 320 GiB SSD)", 
+    "memory_in_gb": 244.0, 
+    "name": "r3.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.66, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "800 GiB SSD", 
+    "memory_in_gb": 30.5, 
+    "name": "i2.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.853, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "1600 GiB (2 * 800 GiB SSD)", 
+    "memory_in_gb": 61.0, 
+    "name": "i2.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.705, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "3200 GiB (4 * 800 GiB SSD)", 
+    "memory_in_gb": 122.0, 
+    "name": "i2.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.41, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "6400 GiB (8 * 800 GiB SSD)", 
+    "memory_in_gb": 244.0, 
+    "name": "i2.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 6.82, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "75 GiB NVMe SSD", 
+    "memory_in_gb": 8.0, 
+    "name": "m5d.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.113, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "150 GiB NVMe SSD", 
+    "memory_in_gb": 16.0, 
+    "name": "m5d.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.226, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "300 GiB NVMe SSD", 
+    "memory_in_gb": 32.0, 
+    "name": "m5d.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.452, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "600 GiB (2 * 300 GiB NVMe SSD)", 
+    "memory_in_gb": 64.0, 
+    "name": "m5d.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.904, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "1800 GiB (2 * 900 GiB NVMe SSD)", 
+    "memory_in_gb": 192.0, 
+    "name": "m5d.12xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.712, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 48
+  }, 
+  {
+    "ephemeral_disks": "3600 GiB (4 * 900 GiB NVMe SSD)", 
+    "memory_in_gb": 384.0, 
+    "name": "m5d.24xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 5.424, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 96
+  }, 
+  {
+    "ephemeral_disks": "50 GiB NVMe SSD", 
+    "memory_in_gb": 4.0, 
+    "name": "c5d.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.096, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "100 GiB NVMe SSD", 
+    "memory_in_gb": 8.0, 
+    "name": "c5d.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.192, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "200 GiB NVMe SSD", 
+    "memory_in_gb": 16.0, 
+    "name": "c5d.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.384, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "400 GiB NVMe SSD", 
+    "memory_in_gb": 32.0, 
+    "name": "c5d.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.768, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "900 GiB NVMe SSD", 
+    "memory_in_gb": 72.0, 
+    "name": "c5d.9xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.728, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 36
+  }, 
+  {
+    "ephemeral_disks": "1800 GiB (2 * 900 GiB NVMe SSD)", 
+    "memory_in_gb": 144.0, 
+    "name": "c5d.18xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 3.456, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 72
+  }, 
+  {
+    "ephemeral_disks": "470 GiB NVMe SSD", 
+    "memory_in_gb": 122.0, 
+    "name": "f1.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.65, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "3760 GiB (4 * 940 GiB NVMe SSD)", 
+    "memory_in_gb": 976.0, 
+    "name": "f1.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 13.2, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "475 GiB NVMe SSD", 
+    "memory_in_gb": 15.25, 
+    "name": "i3.large", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.156, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 2
+  }, 
+  {
+    "ephemeral_disks": "950 GiB NVMe SSD", 
+    "memory_in_gb": 30.5, 
+    "name": "i3.xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.312, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 4
+  }, 
+  {
+    "ephemeral_disks": "1900 GiB NVMe SSD", 
+    "memory_in_gb": 61.0, 
+    "name": "i3.2xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 0.624, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 8
+  }, 
+  {
+    "ephemeral_disks": "3800 GiB (2 * 1900 GiB NVMe SSD)", 
+    "memory_in_gb": 122.0, 
+    "name": "i3.4xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 1.248, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 16
+  }, 
+  {
+    "ephemeral_disks": "7600 GiB (4 * 1900 GiB NVMe SSD)", 
+    "memory_in_gb": 244.0, 
+    "name": "i3.8xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 2.496, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 32
+  }, 
+  {
+    "ephemeral_disks": "15200 GiB (8 * 1900 GiB NVMe SSD)", 
+    "memory_in_gb": 488.0, 
+    "name": "i3.16xlarge", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.992, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 64
+  }, 
+  {
+    "ephemeral_disks": "15200 GiB (8 * 1900 GiB NVMe SSD)", 
+    "memory_in_gb": 512.0, 
+    "name": "i3.metal", 
+    "parsed_timestamp": 1529766196, 
+    "price_per_hour": 4.992, 
+    "provider": "aws", 
+    "region": "us-east-1", 
+    "vcpus": 0
+  }
+]
