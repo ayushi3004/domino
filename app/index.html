@@ -59,6 +59,9 @@
             var icon;
             switch(plans[i].provider){
                 case "azure": icon = ""; break
+                case "gce": icon= "";break
+                case "aws": icon= "";break
+                case "digital_ocean": icon= "";break
                 default: icon = ""
             }
             plans[i]["provider_icon"] = icon
