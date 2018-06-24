@@ -39,7 +39,7 @@ func main() {
 
 	terraformPlanFile := os.Args[1]
 
-	res, _ := http.Get("http://localhost:8000/app/prices.json")
+	res, _ := http.Get("http://localhost:8080/prices.json")
 
 	temp, _ := ioutil.ReadAll(res.Body)
 
@@ -64,9 +64,9 @@ func main() {
 func planToPriceMap(allPlans Plans) map[string]float64 {
 	priceMap := make(map[string]float64)
 	// for _, plans := range allPlans {
-		for _, plan := range allPlans {
-			priceMap[strings.ToLower(plan.Name)] = plan.PricePerHour
-		}
+	for _, plan := range allPlans {
+		priceMap[strings.ToLower(plan.Name)] = plan.PricePerHour
+	}
 	// }
 	return priceMap
 }
@@ -74,9 +74,9 @@ func planToPriceMap(allPlans Plans) map[string]float64 {
 func plantoProviderMap(allPlans Plans) map[string]string {
 	providerMap := make(map[string]string)
 	// for _, plans := range allPlans {
-		for _, plan := range allPlans {
-			providerMap[strings.ToLower(plan.Name)] = plan.Provider
-		}
+	for _, plan := range allPlans {
+		providerMap[strings.ToLower(plan.Name)] = plan.Provider
+	}
 	// }
 	return providerMap
 }
@@ -84,9 +84,9 @@ func plantoProviderMap(allPlans Plans) map[string]string {
 func planToInstanceMemoryMap(allPlans Plans) map[string]float64 {
 	memoryMap := make(map[string]float64)
 	// for _, plans := range allPlans {
-		for _, plan := range allPlans {
-			memoryMap[strings.ToLower(plan.Name)] = plan.MemoryInGb
-		}
+	for _, plan := range allPlans {
+		memoryMap[strings.ToLower(plan.Name)] = plan.MemoryInGb
+	}
 	// }
 	return memoryMap
 }
@@ -94,9 +94,9 @@ func planToInstanceMemoryMap(allPlans Plans) map[string]float64 {
 func planToInstanceCPUMap(allPlans Plans) map[string]int64 {
 	cpuMap := make(map[string]int64)
 	// for _, plans := range allPlans {
-		for _, plan := range allPlans {
-			cpuMap[strings.ToLower(plan.Name)] = plan.Vcpus
-		}
+	for _, plan := range allPlans {
+		cpuMap[strings.ToLower(plan.Name)] = plan.Vcpus
+	}
 	// }
 	return cpuMap
 }
@@ -104,11 +104,11 @@ func planToInstanceCPUMap(allPlans Plans) map[string]int64 {
 func planToMemoryCPUMap(allPlans Plans) map[string][]string {
 	memoryCPUMap := make(map[string][]string)
 	// for _, plans := range allPlans {
-		for _, plan := range allPlans {
-			mem := int(math.Floor(plan.MemoryInGb))
-			key := strconv.Itoa(mem) + "+" + strconv.Itoa(int(plan.Vcpus))
-			memoryCPUMap[key] = append(memoryCPUMap[key], strings.ToLower(plan.Name))
-		}
+	for _, plan := range allPlans {
+		mem := int(math.Floor(plan.MemoryInGb))
+		key := strconv.Itoa(mem) + "+" + strconv.Itoa(int(plan.Vcpus))
+		memoryCPUMap[key] = append(memoryCPUMap[key], strings.ToLower(plan.Name))
+	}
 	// }
 	return memoryCPUMap
 }
@@ -137,19 +137,19 @@ func processTerraformPlan(planFile string) float64 {
 			switch resourceType {
 			case "aws_instance":
 				instanceType = instanceDiff.Attributes["instance_type"].New
-				fmt.Println("resource type recognized: ", instanceType)
+				fmt.Println("Resource type recognized: ", instanceType)
 
 			case "azurerm_virtual_machine":
 				instanceType = instanceDiff.Attributes["vm_size"].New
-				fmt.Println("resource type recognized: ", instanceType)
+				fmt.Println("Resource type recognized: ", instanceType)
 
 			case "digitalocean_droplet":
 				instanceType = instanceDiff.Attributes["size"].New
-				fmt.Println("resource type recognized: ", instanceType)
+				fmt.Println("Resource type recognized: ", instanceType)
 
 			case "google_compute_instance":
 				instanceType = instanceDiff.Attributes["machine_type"].New
-				fmt.Println("resource type recognized: ", instanceType)
+				fmt.Println("Resource type recognized: ", instanceType)
 
 			default:
 				// fmt.Println("resource type not recognized: ", resourceType)
@@ -162,13 +162,13 @@ func processTerraformPlan(planFile string) float64 {
 			key := strconv.Itoa(int(math.Ceil(memory))) + "+" + strconv.Itoa(int(cpu))
 			instanceNames := memoryCPUMap[key]
 			if len(instanceNames) > 0 {
-				fmt.Println("\nWe suggest the following alternatives ====>")
+				fmt.Println("We suggest the following alternatives ====>")
 			}
 			for _, instance := range instanceNames {
 				fmt.Print("\tname: ", instance)
 				fmt.Print("\tmemory: ", instanceMemoryMap[instance])
 				fmt.Print("\tcpu: ", instanceCPUMap[instance])
-				fmt.Print("\tprice: ", priceMap[instance])
+				fmt.Printf("\tprice: %.2f", priceMap[instance]*720)
 				fmt.Print("\tprovider: ", providerMap[instance])
 				fmt.Println()
 			}
@@ -176,6 +176,7 @@ func processTerraformPlan(planFile string) float64 {
 
 		if sum > 0 {
 			fmt.Println("Total cost estimated for the selected instances", sum*720)
+			fmt.Println()
 		}
 		finalCost = finalCost + (sum * 720)
 
