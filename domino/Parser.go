@@ -39,45 +39,16 @@ func main() {
 
 	terraformPlanFile := os.Args[1]
 
-	res_aws, _ := http.Get("http://localhost:8000/aws_ec2_prices.json")
-	res_azure, _ := http.Get("http://localhost:8000/azure_vm_prices.json")
-	res_do, _ := http.Get("http://localhost:8000/do_droplets_prices.json")
-	res_gce, _ := http.Get("http://localhost:8000/gce_prices.json")
+	res, _ := http.Get("http://localhost:8000/app/prices.json")
 
-	temp_aws, _ := ioutil.ReadAll(res_aws.Body)
-	temp_azure, _ := ioutil.ReadAll(res_azure.Body)
-	temp_do, _ := ioutil.ReadAll(res_do.Body)
-	temp_gce, _ := ioutil.ReadAll(res_gce.Body)
+	temp, _ := ioutil.ReadAll(res.Body)
 
-	var plans_aws Plans
-	var plans_azure Plans
-	var plans_do Plans
-	var plans_gce Plans
+	var allPlans Plans
 
-	err1 := json.Unmarshal(temp_aws, &plans_aws)
-	if err1 != nil {
-		fmt.Println("There was an error:", err1)
+	err := json.Unmarshal(temp, &allPlans)
+	if err != nil {
+		fmt.Println("There was an error:", err)
 	}
-
-	err2 := json.Unmarshal(temp_azure, &plans_azure)
-	if err2 != nil {
-		fmt.Println("There was an error:", err2)
-	}
-	err3 := json.Unmarshal(temp_do, &plans_do)
-	if err3 != nil {
-		fmt.Println("There was an error:", err3)
-	}
-
-	err4 := json.Unmarshal(temp_gce, &plans_gce)
-	if err4 != nil {
-		fmt.Println("There was an error:", err4)
-	}
-
-	allPlans := []Plans{}
-	allPlans = append(allPlans, plans_aws)
-	allPlans = append(allPlans, plans_azure)
-	allPlans = append(allPlans, plans_do)
-	allPlans = append(allPlans, plans_gce)
 
 	priceMap = planToPriceMap(allPlans)
 	instanceCPUMap = planToInstanceCPUMap(allPlans)
@@ -90,55 +61,55 @@ func main() {
 
 }
 
-func planToPriceMap(allPlans []Plans) map[string]float64 {
+func planToPriceMap(allPlans Plans) map[string]float64 {
 	priceMap := make(map[string]float64)
-	for _, plans := range allPlans {
-		for _, plan := range plans {
+	// for _, plans := range allPlans {
+		for _, plan := range allPlans {
 			priceMap[strings.ToLower(plan.Name)] = plan.PricePerHour
 		}
-	}
+	// }
 	return priceMap
 }
 
-func plantoProviderMap(allPlans []Plans) map[string]string {
+func plantoProviderMap(allPlans Plans) map[string]string {
 	providerMap := make(map[string]string)
-	for _, plans := range allPlans {
-		for _, plan := range plans {
+	// for _, plans := range allPlans {
+		for _, plan := range allPlans {
 			providerMap[strings.ToLower(plan.Name)] = plan.Provider
 		}
-	}
+	// }
 	return providerMap
 }
 
-func planToInstanceMemoryMap(allPlans []Plans) map[string]float64 {
+func planToInstanceMemoryMap(allPlans Plans) map[string]float64 {
 	memoryMap := make(map[string]float64)
-	for _, plans := range allPlans {
-		for _, plan := range plans {
+	// for _, plans := range allPlans {
+		for _, plan := range allPlans {
 			memoryMap[strings.ToLower(plan.Name)] = plan.MemoryInGb
 		}
-	}
+	// }
 	return memoryMap
 }
 
-func planToInstanceCPUMap(allPlans []Plans) map[string]int64 {
+func planToInstanceCPUMap(allPlans Plans) map[string]int64 {
 	cpuMap := make(map[string]int64)
-	for _, plans := range allPlans {
-		for _, plan := range plans {
+	// for _, plans := range allPlans {
+		for _, plan := range allPlans {
 			cpuMap[strings.ToLower(plan.Name)] = plan.Vcpus
 		}
-	}
+	// }
 	return cpuMap
 }
 
-func planToMemoryCPUMap(allPlans []Plans) map[string][]string {
+func planToMemoryCPUMap(allPlans Plans) map[string][]string {
 	memoryCPUMap := make(map[string][]string)
-	for _, plans := range allPlans {
-		for _, plan := range plans {
+	// for _, plans := range allPlans {
+		for _, plan := range allPlans {
 			mem := int(math.Floor(plan.MemoryInGb))
 			key := strconv.Itoa(mem) + "+" + strconv.Itoa(int(plan.Vcpus))
 			memoryCPUMap[key] = append(memoryCPUMap[key], strings.ToLower(plan.Name))
 		}
-	}
+	// }
 	return memoryCPUMap
 }
 
@@ -191,7 +162,7 @@ func processTerraformPlan(planFile string) float64 {
 			key := strconv.Itoa(int(math.Ceil(memory))) + "+" + strconv.Itoa(int(cpu))
 			instanceNames := memoryCPUMap[key]
 			if len(instanceNames) > 0 {
-				fmt.Println("We suggest the following alternatives ====>")
+				fmt.Println("\nWe suggest the following alternatives ====>")
 			}
 			for _, instance := range instanceNames {
 				fmt.Print("\tname: ", instance)
@@ -204,7 +175,7 @@ func processTerraformPlan(planFile string) float64 {
 		}
 
 		if sum > 0 {
-			fmt.Println("Total cost estimated for the current plan", sum*720)
+			fmt.Println("Total cost estimated for the selected instances", sum*720)
 		}
 		finalCost = finalCost + (sum * 720)
 
