@@ -14,24 +14,24 @@
 </head>
 <body>
     <div id="nav">
-            <i class="fas fa-cloud"></i>
+        <i class="fas fa-cloud"></i>
     </div>
-
-
+    
+    
     <div id="app">
-
+        
         <div id="search">
             <input id="searchbox" type="text" v-model="search" placeholder="&#xF002 Search">
         </div>
         <div>
             <div class="table-row table-row-head">
                 <div>Provider</div>
-                <div>Name</div>
-                <div>CPU</div>
-                <div>Memory</div>
-                <div>Disk</div>
-                <div>Pricing</div>
-                <div>Region</div>
+                <div @click="sort">Name</div>
+                <div @click="sort">CPU</div>
+                <div @click="sort">Memory</div>
+                <div @click="sort">Disk</div>
+                <div @click="sort">Pricing</div>
+                <div @click="sort">Region</div>
             </div>
             <div class="table-row" v-for="plan in getPlans()">
                 <div>{{plan.provider_icon}}</div>
@@ -47,80 +47,98 @@
     
 </body>
 <script>
-    var app=new Vue({
-    el: "#app",
-    data: function(){
-            return {
-            search: '',
-            plans: plans};
-    },
-    created() {
-        for(i=0;i<plans.length;i++){
-            var icon;
-            switch(plans[i].provider){
-                case "azure": icon = ""; break
-                case "gce": icon= "";break
-                case "aws": icon= "";break
-                default: icon = ""
-            }
-            plans[i]["provider_icon"] = icon
-        }
-    },
-    methods:
-    {
-        filterByName: function(value, plans) {
-            return plans.filter(function(plan){
-                return plan.name.toLowerCase().indexOf(value.toLowerCase())>=0;
-            })
-        },
-        filterByProvider: function(value, plans) {
-            return plans.filter(function(plan){
-                return plan.provider.toLowerCase().indexOf(value.toLowerCase())>=0;
-            })
-        },
-        filterByCpu: function(value, plans) {
-            return plans.filter(function(plan){
-                return plan.vcpus == value;
-            })
-        },
-        filterByMemory: function(value, plans) {
-            return plans.filter(function(plan){
-                return plan.memory_in_gb == value;
-            })
-        }, 
-        filterBy: function(field, plans) {
-            var words = field.toLowerCase().trim().split(":")
-            var key = words[0], value = words[1]
-            switch(key) {
-                case "name" : return this.filterByName(value, plans);
-                                break;
-                case "provider": return this.filterByProvider(value, plans);
-                                break;
-                case "cpu" : return this.filterByCpu(value, plans);
-                                break;
-                case "memory": return this.filterByMemory(value, plans);
-                                break;
-                default: return plans;
-            }
-        },
-        filterPlans: function(fields, plans) {
-            console.log
-            if (fields.length == 1){
-                return this.filterBy(fields[0], plans)
-            }
-            else 
-                return this.filterPlans(fields.splice(1), this.filterBy(fields[0], plans))
-        },
-        getPlans: function() {
-            if (this.search.length > 0) {
-                var keyFields = this.search.trim().split(" ")
-                return this.filterPlans(keyFields, this.plans)
-            }
-            else    
-                return this.plans
-        }
+    var canonicalFieldName = {
+        "Name":"name",
+        "CPU":"vcpus",
+        "Memory":"memory_in_gb",
+        "Disk":"ephemeral_disks",
+        "Pricing":"price_per_hour",
+        "Region":"region"
     }
-    });
-    
-</script>
-</html>
+    var app=new Vue({
+        el: "#app",
+        data: function(){
+            return {
+                search: '',
+                plans: plans};
+            },
+            created() {
+                for(i=0;i<plans.length;i++){
+                    var icon;
+                    switch(plans[i].provider){
+                        case "azure": icon = ""; break
+                        case "gce": icon= "";break
+                        case "aws": icon= "";break
+                        default: icon = ""
+                    }
+                    plans[i]["provider_icon"] = icon
+                }
+            },
+            methods:
+            {
+                sort: function(event) {
+                    console.log(this)
+                    var clicked_element = event.toElement.innerText
+                    var canonical_element = canonicalFieldName[clicked_element]
+                    plans.sort(function(a,b){
+                        
+                        return a[canonical_element] == b[canonical_element] ? 0 : +(a[canonical_element] > b[canonical_element]) || -1
+                    })
+                    
+                },
+                filterByName: function(value, plans) {
+                    return plans.filter(function(plan){
+                        return plan.name.toLowerCase().indexOf(value.toLowerCase())>=0;
+                    })
+                },
+                filterByProvider: function(value, plans) {
+                    return plans.filter(function(plan){
+                        return plan.provider.toLowerCase().indexOf(value.toLowerCase())>=0;
+                    })
+                },
+                filterByCpu: function(value, plans) {
+                    return plans.filter(function(plan){
+                        return plan.vcpus == value;
+                    })
+                },
+                filterByMemory: function(value, plans) {
+                    return plans.filter(function(plan){
+                        return plan.memory_in_gb == value;
+                    })
+                }, 
+                filterBy: function(field, plans) {
+                    var words = field.toLowerCase().trim().split(":")
+                    var key = words[0], value = words[1]
+                    switch(key) {
+                        case "name" : return this.filterByName(value, plans);
+                        break;
+                        case "provider": return this.filterByProvider(value, plans);
+                        break;
+                        case "cpu" : return this.filterByCpu(value, plans);
+                        break;
+                        case "memory": return this.filterByMemory(value, plans);
+                        break;
+                        default: return plans;
+                    }
+                },
+                filterPlans: function(fields, plans) {
+                    console.log
+                    if (fields.length == 1){
+                        return this.filterBy(fields[0], plans)
+                    }
+                    else 
+                    return this.filterPlans(fields.splice(1), this.filterBy(fields[0], plans))
+                },
+                getPlans: function() {
+                    if (this.search.length > 0) {
+                        var keyFields = this.search.trim().split(" ")
+                        return this.filterPlans(keyFields, this.plans)
+                    }
+                    else    
+                    return this.plans
+                }
+            }
+        });
+        
+    </script>
+    </html>
