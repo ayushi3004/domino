@@ -1,4 +1,4 @@
-var plans = [
+[
   {
     "ephemeral_disks": "160 GiB HDD + 900MB swap", 
     "memory_in_gb": 1.7, 
