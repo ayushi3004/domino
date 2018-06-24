@@ -6,6 +6,7 @@
     <title>Domino</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -33,7 +34,7 @@
                 <div>Region</div>
             </div>
             <div class="table-row" v-for="plan in getPlans()">
-                <div>{{plan.provider}}</div>
+                <div>{{plan.provider_icon}}</div>
                 <div class=".overflow-hidden">{{plan.name}}</div>
                 <div>{{plan.vcpus}}</div>
                 <div>{{plan.memory_in_gb}}</div>
@@ -52,6 +53,16 @@
             return {
             search: '',
             plans: plans};
+    },
+    created() {
+        for(i=0;i<plans.length;i++){
+            var icon;
+            switch(plans[i].provider){
+                case "azure": icon = ""; break
+                default: icon = ""
+            }
+            plans[i]["provider_icon"] = icon
+        }
     },
     methods:
     {
