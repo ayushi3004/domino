@@ -57,7 +57,7 @@ func main() {
 	providerMap = plantoProviderMap(allPlans)
 
 	finalCost := processTerraformPlan(terraformPlanFile)
-	fmt.Println("Total Cost: ", finalCost)
+	fmt.Println("Total Cost of your current plan: ", finalCost)
 
 }
 
@@ -162,22 +162,23 @@ func processTerraformPlan(planFile string) float64 {
 			key := strconv.Itoa(int(math.Ceil(memory))) + "+" + strconv.Itoa(int(cpu))
 			instanceNames := memoryCPUMap[key]
 			if len(instanceNames) > 0 {
-				fmt.Println("We suggest the following alternatives ====>")
+				fmt.Printf("ALTERNATIVES::.\n")
+				fmt.Printf("%20s\t%s\t%s\t%s\t%s\n", "name", "memory", "cpu", "price", "provider")
 			}
 			for _, instance := range instanceNames {
-				fmt.Print("\tname: ", instance)
-				fmt.Print("\tmemory: ", instanceMemoryMap[instance])
-				fmt.Print("\tcpu: ", instanceCPUMap[instance])
-				fmt.Printf("\tprice: %.2f", priceMap[instance]*720)
-				fmt.Print("\tprovider: ", providerMap[instance])
+				fmt.Printf("%20s ", instance)
+				fmt.Print("\t", instanceMemoryMap[instance])
+				fmt.Print("\t", instanceCPUMap[instance])
+				fmt.Printf("\t %.2f", priceMap[instance]*720)
+				fmt.Print("\t", providerMap[instance])
 				fmt.Println()
 			}
 		}
 
-		if sum > 0 {
-			fmt.Println("Total cost estimated for the selected instances", sum*720)
-			fmt.Println()
-		}
+		// if sum > 0 {
+		// 	fmt.Println("Total cost estimated for the selected instances", sum*720)
+		// 	fmt.Println()
+		// }
 		finalCost = finalCost + (sum * 720)
 
 	}
